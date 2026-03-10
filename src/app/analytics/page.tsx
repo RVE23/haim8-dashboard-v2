@@ -131,7 +131,7 @@ export default function AnalyticsPage() {
                 {/* Highlight Stats */}
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                     {[
-                        { label: 'Avg lead quality', value: `${stats?.leadQualityTrend[stats.leadQualityTrend.length - 1]?.avgScore || 0}%`, icon: TrendingUp, color: 'text-blue-400' },
+                        { label: 'Avg lead quality', value: `${stats?.leadQualityTrend?.[stats.leadQualityTrend.length - 1]?.avgScore || 0}%`, icon: TrendingUp, color: 'text-blue-400' },
                         { label: 'Total Directors', value: stats?.totalDirectors.toLocaleString(), icon: Users, color: 'text-emerald-400' },
                         { label: 'Property Assets', value: stats?.propertyOwnedCount.toLocaleString(), icon: Home, color: 'text-purple-400' },
                         { label: 'Enrichment Rate', value: stats ? `${Math.round((stats.fullyEnriched / stats.totalDirectors) * 100)}%` : '0%', icon: CheckCircle, color: 'text-amber-400' },
