@@ -35,6 +35,16 @@ ChartJS.register(
 export default function AnalyticsPage() {
     const { stats, loading, error } = useDashboardData();
 
+    if (loading || !stats) {
+        return (
+            <DashboardLayout>
+                <div className="flex items-center justify-center min-h-[400px]">
+                    <Loader2 className="animate-spin text-blue-500" size={40} />
+                </div>
+            </DashboardLayout>
+        );
+    }
+
     if (error) {
         return (
             <DashboardLayout>
